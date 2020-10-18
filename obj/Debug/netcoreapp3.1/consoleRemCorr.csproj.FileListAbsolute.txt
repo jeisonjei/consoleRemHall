@@ -1,0 +1,17 @@
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemCorr\obj\Debug\netcoreapp3.1\consoleRemCorr.csprojAssemblyReference.cache
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemCorr\obj\Debug\netcoreapp3.1\consoleRemCorr.AssemblyInfoInputs.cache
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemCorr\obj\Debug\netcoreapp3.1\consoleRemCorr.AssemblyInfo.cs
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemCorr\obj\Debug\netcoreapp3.1\consoleRemCorr.csproj.CoreCompileInputs.cache
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemCorr\bin\Debug\netcoreapp3.1\CoolProp.dll
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemCorr\bin\Debug\netcoreapp3.1\consoleRemCorr.exe
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemCorr\bin\Debug\netcoreapp3.1\consoleRemCorr.deps.json
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemCorr\bin\Debug\netcoreapp3.1\consoleRemCorr.runtimeconfig.json
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemCorr\bin\Debug\netcoreapp3.1\consoleRemCorr.runtimeconfig.dev.json
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemCorr\bin\Debug\netcoreapp3.1\consoleRemCorr.dll
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemCorr\bin\Debug\netcoreapp3.1\consoleRemCorr.pdb
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemCorr\bin\Debug\netcoreapp3.1\SharpFluids.dll
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemCorr\bin\Debug\netcoreapp3.1\UnitsNet.dll
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemCorr\obj\Debug\netcoreapp3.1\consoleRemCorr.csproj.CopyComplete
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemCorr\obj\Debug\netcoreapp3.1\consoleRemCorr.dll
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemCorr\obj\Debug\netcoreapp3.1\consoleRemCorr.pdb
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemCorr\obj\Debug\netcoreapp3.1\consoleRemCorr.genruntimeconfig.cache

@@ -1,0 +1,197 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "SharpFluids/2.0.30": {
+        "type": "package",
+        "dependencies": {
+          "UnitsNet": "4.69.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/SharpFluids.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/SharpFluids.dll": {}
+        },
+        "build": {
+          "build/SharpFluids.targets": {}
+        }
+      },
+      "System.ValueTuple/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
+      "UnitsNet/4.69.0": {
+        "type": "package",
+        "dependencies": {
+          "System.ValueTuple": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/UnitsNet.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/UnitsNet.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SharpFluids/2.0.30": {
+      "sha512": "xoRymPEbO/kihiWQ+bAnisDBZVNPOOxGbWGfDDkTxDeocA/a7Gk/VhWhbzLWL/tJGziwnygn2p5W3K+QyuxpEg==",
+      "type": "package",
+      "path": "sharpfluids/2.0.30",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/CoolProp.dll",
+        "build/SharpFluids.targets",
+        "lib/net40/SharpFluids.dll",
+        "lib/net40/SharpFluids.pdb",
+        "lib/net40/SharpFluids.xml",
+        "lib/net461/SharpFluids.dll",
+        "lib/net461/SharpFluids.xml",
+        "lib/net472/SharpFluids.dll",
+        "lib/net472/SharpFluids.pdb",
+        "lib/net472/SharpFluids.xml",
+        "lib/netstandard2.1/SharpFluids.dll",
+        "lib/netstandard2.1/SharpFluids.pdb",
+        "lib/netstandard2.1/SharpFluids.xml",
+        "sharpfluids.2.0.30.nupkg.sha512",
+        "sharpfluids.nuspec"
+      ]
+    },
+    "System.ValueTuple/4.5.0": {
+      "sha512": "okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ==",
+      "type": "package",
+      "path": "system.valuetuple/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.ValueTuple.dll",
+        "lib/net461/System.ValueTuple.xml",
+        "lib/net47/System.ValueTuple.dll",
+        "lib/net47/System.ValueTuple.xml",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.0/System.ValueTuple.dll",
+        "lib/netstandard1.0/System.ValueTuple.xml",
+        "lib/netstandard2.0/_._",
+        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
+        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.xml",
+        "lib/uap10.0.16299/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net461/System.ValueTuple.dll",
+        "ref/net47/System.ValueTuple.dll",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard2.0/_._",
+        "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
+        "ref/uap10.0.16299/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.valuetuple.4.5.0.nupkg.sha512",
+        "system.valuetuple.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "UnitsNet/4.69.0": {
+      "sha512": "Ir9W3omiH0BCBWgVTqqGvg0DbltC9sE1Q7r3d1TwyDS2+WCImfZX4DzTGjbQDri+kNPgz4CHJZi6JF7fFuklRg==",
+      "type": "package",
+      "path": "unitsnet/4.69.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/UnitsNet.dll",
+        "lib/net40/UnitsNet.pdb",
+        "lib/net40/UnitsNet.xml",
+        "lib/netstandard2.0/UnitsNet.dll",
+        "lib/netstandard2.0/UnitsNet.pdb",
+        "lib/netstandard2.0/UnitsNet.xml",
+        "logo-32.png",
+        "unitsnet.4.69.0.nupkg.sha512",
+        "unitsnet.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "sharpfluids >= 2.0.30"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Danil\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Danil\\OneDrive\\Support\\CodingWorker\\consoleRemHall\\consoleRemHall.csproj",
+      "projectName": "consoleRemHall",
+      "projectPath": "C:\\Users\\Danil\\OneDrive\\Support\\CodingWorker\\consoleRemHall\\consoleRemHall.csproj",
+      "packagesPath": "C:\\Users\\Danil\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Danil\\OneDrive\\Support\\CodingWorker\\consoleRemHall\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Danil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "dependencies": {
+          "sharpfluids": {
+            "target": "Package",
+            "version": "[2.0.30, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

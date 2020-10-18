@@ -1,0 +1,17 @@
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemHall\bin\Debug\netcoreapp3.1\CoolProp.dll
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemHall\bin\Debug\netcoreapp3.1\consoleRemHall.exe
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemHall\bin\Debug\netcoreapp3.1\consoleRemHall.deps.json
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemHall\bin\Debug\netcoreapp3.1\consoleRemHall.runtimeconfig.json
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemHall\bin\Debug\netcoreapp3.1\consoleRemHall.runtimeconfig.dev.json
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemHall\bin\Debug\netcoreapp3.1\consoleRemHall.dll
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemHall\bin\Debug\netcoreapp3.1\consoleRemHall.pdb
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemHall\bin\Debug\netcoreapp3.1\SharpFluids.dll
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemHall\bin\Debug\netcoreapp3.1\UnitsNet.dll
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemHall\obj\Debug\netcoreapp3.1\consoleRemHall.csprojAssemblyReference.cache
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemHall\obj\Debug\netcoreapp3.1\consoleRemHall.AssemblyInfoInputs.cache
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemHall\obj\Debug\netcoreapp3.1\consoleRemHall.AssemblyInfo.cs
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemHall\obj\Debug\netcoreapp3.1\consoleRemHall.csproj.CoreCompileInputs.cache
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemHall\obj\Debug\netcoreapp3.1\consoleRemHall.csproj.CopyComplete
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemHall\obj\Debug\netcoreapp3.1\consoleRemHall.dll
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemHall\obj\Debug\netcoreapp3.1\consoleRemHall.pdb
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemHall\obj\Debug\netcoreapp3.1\consoleRemHall.genruntimeconfig.cache

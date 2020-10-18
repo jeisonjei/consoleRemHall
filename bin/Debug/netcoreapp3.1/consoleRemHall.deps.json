@@ -1,0 +1,70 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "consoleRemHall/1.0.0": {
+        "dependencies": {
+          "SharpFluids": "2.0.30"
+        },
+        "runtime": {
+          "consoleRemHall.dll": {}
+        }
+      },
+      "SharpFluids/2.0.30": {
+        "dependencies": {
+          "UnitsNet": "4.69.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/SharpFluids.dll": {
+            "assemblyVersion": "1.2.7533.30487",
+            "fileVersion": "1.2.7533.30487"
+          }
+        }
+      },
+      "System.ValueTuple/4.5.0": {},
+      "UnitsNet/4.69.0": {
+        "dependencies": {
+          "System.ValueTuple": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/UnitsNet.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "consoleRemHall/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SharpFluids/2.0.30": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xoRymPEbO/kihiWQ+bAnisDBZVNPOOxGbWGfDDkTxDeocA/a7Gk/VhWhbzLWL/tJGziwnygn2p5W3K+QyuxpEg==",
+      "path": "sharpfluids/2.0.30",
+      "hashPath": "sharpfluids.2.0.30.nupkg.sha512"
+    },
+    "System.ValueTuple/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ==",
+      "path": "system.valuetuple/4.5.0",
+      "hashPath": "system.valuetuple.4.5.0.nupkg.sha512"
+    },
+    "UnitsNet/4.69.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ir9W3omiH0BCBWgVTqqGvg0DbltC9sE1Q7r3d1TwyDS2+WCImfZX4DzTGjbQDri+kNPgz4CHJZi6JF7fFuklRg==",
+      "path": "unitsnet/4.69.0",
+      "hashPath": "unitsnet.4.69.0.nupkg.sha512"
+    }
+  }
+}
