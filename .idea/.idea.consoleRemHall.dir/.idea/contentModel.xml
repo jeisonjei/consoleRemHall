@@ -10,6 +10,7 @@
         <e p="Hall.cs" t="Include" />
         <e p="NetPart.cs" t="Include" />
         <e p="Room.cs" t="Include" />
+        <e p="SysPart.cs" t="Include" />
       </e>
       <e p="consoleRemHall.csproj" t="IncludeRecursive" />
       <e p="NaturalPhenomenaDependent" t="Include">
@@ -28,6 +29,7 @@
       <e p="packages" t="ExcludeRecursive" />
       <e p="Program.cs" t="Include" />
       <e p="SemanticObjects" t="Include">
+        <e p="-.cs" t="Include" />
         <e p="Floor.cs" t="Include" />
         <e p="Network.cs" t="Include" />
       </e>

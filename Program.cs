@@ -5,6 +5,7 @@ using consoleRemHall.Support;
 using Main.NaturalPhenomenaIndependent;
 using Main.SimpleObjects;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using consoleRemHall.SemanticObjects;
@@ -61,12 +62,27 @@ namespace consoleRemHall
             // Console.WriteLine($"{"HIDRAULIC D",-15}|{duct.HidraulicDiameter.RoundTo1()}");
             // Console.WriteLine($"{"LAMBDA",-15}|{duct.Lambda}");
             
-            
-            Fluid fluid=new Fluid(20);
-            Floor floor=new Floor(1,4.5,0);
-            Duct duct=new Duct(550,550,4.5,fluid);
-            NetPart netPart=new NetPart(floor,duct,10,2);
-            Console.WriteLine($"{"DP",-25}|{netPart.DP}");
+            SortedList<int,SysPart> system=new SortedList<int, SysPart>();
+            Fluid fluid1=new Fluid(100);
+            Fluid fluid2=new Fluid(80);
+            Fluid fluid3=new Fluid(60);
+            Floor floor1=new Floor(1,4.5,0);
+            Floor floor2=new Floor(2,3,4.5);
+            Floor floor3 = new Floor(3, 3, 7.5);
+            Duct duct1=new Duct(550,550,4.5,fluid1);
+            Duct duct2=new Duct(400,550,4.5,fluid2);
+            Duct duct3=new Duct(600,550,4.5,fluid3);
+            NetPart netPart1=new NetPart(duct1,0,0.5);
+            NetPart netPart2=new NetPart(duct2,5,1);
+            NetPart netPart3=new NetPart(duct3,10,2);
+            SysPart sysPart1=new SysPart(floor1,fluid1,duct1,netPart1);
+            SysPart sysPart2=new SysPart(floor2,fluid2,duct2,netPart2);
+            SysPart sysPart3=new SysPart(floor3,fluid3,duct3,netPart3);
+            system.Add(1,sysPart1);
+            system.Add(2,sysPart2);
+            system.Add(3,sysPart3);
+            var sum = system.Sum(x => x.Value.NetPart.GetDP(x.Value.Floor.Height));
+            Console.WriteLine($"{"SUM DP",-25}|{sum}");
         }
     }
 }
