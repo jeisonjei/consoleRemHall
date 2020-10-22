@@ -16,11 +16,11 @@ namespace consoleRemHall
     {
         static void Main(string[] args)
         {
-            //Climate climate = new Climate(26, 26, 2);
-            //List<Opening> openings = new List<Opening>() { new Opening(1,2.1),new Opening(1.8,1) };
-            //Room room = new Room(25, 2.8, openings, 14, 200, climate);
-            //DoorHall doorHall = new DoorHall(1.1, 2.1,DoorHall.Type.SmokeResistant,climate);
-            //Hall hall = new Hall(30, 15, 2.8, doorHall, room, climate,BuildingType.Residential);
+            Climate climate = new Climate(26, 26, 2);
+            List<Opening> openings = new List<Opening>() { new Opening(1,2.1),new Opening(1.8,1) };
+            Room room = new Room(25, 2.8, openings, 14, 200, climate);
+            DoorHall doorHall = new DoorHall(1.1, 2.1,DoorHall.Type.SmokeResistant,climate);
+            Hall hall = new Hall(30, 15, 2.8, doorHall, room, climate,BuildingType.Residential);
             //Console.WriteLine($"{"ROOM VOLUME",-20} : {room.Volume.RoundTo1(),5}");
             //Console.WriteLine($"{"ROOM SURFACE",-20} : {room.Surface.RoundTo1(),5}");
             //Console.WriteLine($"{"OPENINGS AREA",-20} : {room.OpeningArea.RoundTo2(),5}");
@@ -62,27 +62,27 @@ namespace consoleRemHall
             // Console.WriteLine($"{"HIDRAULIC D",-15}|{duct.HidraulicDiameter.RoundTo1()}");
             // Console.WriteLine($"{"LAMBDA",-15}|{duct.Lambda}");
             
-            SortedList<int,SysPart> system=new SortedList<int, SysPart>();
-            Fluid fluid1=new Fluid(100);
-            Fluid fluid2=new Fluid(80);
-            Fluid fluid3=new Fluid(60);
-            Floor floor1=new Floor(1,4.5,0);
-            Floor floor2=new Floor(2,3,4.5);
-            Floor floor3 = new Floor(3, 3, 7.5);
-            Duct duct1=new Duct(550,550,4.5,fluid1);
-            Duct duct2=new Duct(400,550,4.5,fluid2);
-            Duct duct3=new Duct(600,550,4.5,fluid3);
-            NetPart netPart1=new NetPart(duct1,0,0.5);
-            NetPart netPart2=new NetPart(duct2,5,1);
-            NetPart netPart3=new NetPart(duct3,10,2);
-            SysPart sysPart1=new SysPart(floor1,fluid1,duct1,netPart1);
-            SysPart sysPart2=new SysPart(floor2,fluid2,duct2,netPart2);
-            SysPart sysPart3=new SysPart(floor3,fluid3,duct3,netPart3);
-            system.Add(1,sysPart1);
-            system.Add(2,sysPart2);
-            system.Add(3,sysPart3);
-            var sum = system.Sum(x => x.Value.NetPart.GetDP(x.Value.Floor.Height));
-            Console.WriteLine($"{"SUM DP",-25}|{sum}");
+            Network network=new Network(1,5,hall,climate);
+            network.AddSingle(1,4,(600,400),10,4);
+            network.AddRange((2,5),3.2,(600,400),0,0.5);
+            // network.CompPressure();
+            // foreach (KeyValuePair<int,SysPart> part in network.System)
+            // {
+            //     Console.WriteLine($"{part.Key,-5}{"VELOCITY",-10}|{part.Value.NetPart.Velocity.RoundTo2()}");
+            //     Console.WriteLine($"{part.Key,-5}{"FLOW START",-10}|{part.Value.NetPart.FlowStart.RoundTo4()}");
+            //     Console.WriteLine($"{part.Key,-5}{"Gda",-10}|{part.Value.NetPart.Gda.RoundTo4()}");
+            //     Console.WriteLine($"{part.Key,-5}{"FLOW END",-10}|{part.Value.NetPart.FlowEnd.RoundTo4()}");
+            //     Console.WriteLine($"{part.Key,-5}{"TEMP",-10}|{part.Value.NetPart.Fluid.Temp.RoundTo4()}");
+            //     Console.WriteLine($"{part.Key,-5}{"DENSITY",-10}|{part.Value.NetPart.Fluid.Density.RoundTo4()}");
+            //     Console.WriteLine($"{part.Key,-5}{"P START",-10}|{part.Value.NetPart.PressureStart.RoundTo4()}");
+            //     Console.WriteLine($"{part.Key,-5}{"P END",-10}|{part.Value.NetPart.PressureEnd.RoundTo4()}");
+            //     Console.WriteLine($"{part.Key,-5}{"Tsm START",-10}|{part.Value.NetPart.TsmStart.RoundTo4()}");
+            //     Console.WriteLine($"{part.Key,-5}{"Tsm END",-10}|{part.Value.NetPart.TsmEnd.RoundTo4()}");
+            //     Console.WriteLine("----------");
+            // }
+            // Console.WriteLine($"{"Lv Fan",-10}|{network.System.Last().Value.NetPart.FlowEnd.ToCubicMetersPerHour(network.System.Last().Value.NetPart.Fluid.Density).RoundTo0()}");
+            // Console.WriteLine($"{"Pv Fan",-10}|{network.System.Last().Value.NetPart.PressureEnd.RoundTo1()}");
+
         }
     }
 }

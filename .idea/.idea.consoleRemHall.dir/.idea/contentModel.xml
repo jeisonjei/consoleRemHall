@@ -31,6 +31,7 @@
       <e p="SemanticObjects" t="Include">
         <e p="-.cs" t="Include" />
         <e p="Floor.cs" t="Include" />
+        <e p="INetwork.cs" t="Include" />
         <e p="Network.cs" t="Include" />
       </e>
       <e p="SimpleObjects" t="Include">

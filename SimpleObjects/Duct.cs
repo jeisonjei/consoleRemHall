@@ -12,18 +12,14 @@ namespace consoleRemHall.SimpleObjects
         private double height;
         private double diameter;
 
-        public Duct(double width, double height, double flow, Fluid fluid)
+        public Duct(double width, double height)
         {
             Width = width;
             Height = height;
-            Flow = flow;
-            Fluid = fluid;
         }
-        public Duct(double diameter, double flow,Fluid fluid)
+        public Duct(double diameter)
         {
             Diameter = diameter;
-            Flow = flow;
-            Fluid = fluid;
         }
 
         public double Width
@@ -54,8 +50,8 @@ namespace consoleRemHall.SimpleObjects
         }
 
         public Type Type { get; set; }
-        public double Flow { get; set; }
-        public Fluid Fluid { get; set; }
+        
+        
 
         public double Diameter
         {
@@ -87,65 +83,12 @@ namespace consoleRemHall.SimpleObjects
             }
         }
 
-        public double Velocity
-        {
-            get
-            {
-                return Flow / (Area * Fluid.Density);
-            }
-        }
-        public double Re
-        {
-            get
-            {
-                if (Type==Type.Round)
-                {
-                    return (Velocity*Diameter.ToMeters()) / Fluid.Nu;
-                }
+        
+        
 
-                if (Type==Type.Rectangular)
-                {
-                    return (Velocity*HidraulicDiameter.ToMeters()) / Fluid.Nu;
-                }
+        
 
-                throw  new ArithmeticException("Нельзя вычислить число Ренольдца, так как не задан тип воздуховода");
-            }
-        }
-
-        public double Lambda
-        {
-            get
-            {
-                if (Type==Type.Round)
-                {
-                    return 0.11 * Math.Pow((0.1 / Diameter + 0.68 / Re), 0.25);
-                }
-
-                if (Type==Type.Rectangular)
-                {
-                    return 0.11 * Math.Pow((0.1 / HidraulicDiameter + 0.68 / Re), 0.25);
-                }
-                throw new ArithmeticException("Нельзя вычислить Лямбда, так как не задан тип воздуховода");
-            }
-        }
-
-        public double dP
-        {
-            get
-            {
-                if (Type==Type.Round)
-                {
-                    return Lambda * (Fluid.Density * Math.Pow(Velocity, 2)) / (2 * Diameter.ToMeters());
-                }
-
-                if (Type==Type.Rectangular)
-                {
-                    return Lambda * (Fluid.Density * Math.Pow(Velocity, 2)) / (2 * HidraulicDiameter.ToMeters());
-                    
-                }
-                throw new ArithmeticException("Нельзя вычислить dP, так как не задан тип воздуховода - круглый или прямоугольный");
-            }
-        }
+        
     }
     public enum Type
     {

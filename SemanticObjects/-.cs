@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using consoleRemHall.CompoundObjects;
-using UnitsNet;
 
-namespace Main.SemanticObjects
+namespace consoleRemHall.SemanticObjects
 {
     //пока что нет возможности задания отметки надземного этажа (например если ЛК начинается на 2-ом этаже и отметка этого этажа отлична от 0). При необходимости добавить
     public class Floors
@@ -25,7 +23,7 @@ namespace Main.SemanticObjects
             }
             else if (First == 0)
             {
-                throw new ArithmeticException($"Индекс первого этажа не может быть {0}. Первый этаж может быть или больше нуля : 1,2,3 итд, или меньше нуля -1,-2,-3 итд");
+                throw new ArithmeticException("Индекс первого этажа не может быть 0. Первый этаж может быть или больше нуля : 1,2,3 итд, или меньше нуля -1,-2,-3 итд");
             }
             ExhaustShaftTopOffsetFromRoof = exhaustShaftTopOffsetFromRoof;
             //добавление метода в событие
@@ -47,7 +45,7 @@ namespace Main.SemanticObjects
             }
             else if (First == 0)
             {
-                throw new ArithmeticException($"Индекс первого этажа не может быть {0}. Первый этаж может быть или больше нуля : 1,2,3 итд, или меньше нуля -1,-2,-3 итд");
+                throw new ArithmeticException($"Индекс первого этажа не может быть 0. Первый этаж может быть или больше нуля : 1,2,3 итд, или меньше нуля -1,-2,-3 итд");
             }
             //добавление метода в событие
             LevelsComplete += CompLevels;
@@ -122,7 +120,7 @@ namespace Main.SemanticObjects
 
         public void AddRange((int, int) range, double height)
         {
-            
+            //----
             if (range.Item2 < range.Item1)
             {
                 throw new ArithmeticException("Неправильно указан диапазон: этажи указываются в порядке возрастания");
@@ -135,6 +133,7 @@ namespace Main.SemanticObjects
             {
                 throw new ArithmeticException($"Последний этаж диапазона {range.Item2} не может быть выше последнего этажа здания {Last}. Измените диапазон или измените количество здания");
             }
+            //----
             for (int i = range.Item1; i <= range.Item2; i++)
             {
                 if (i == 0)

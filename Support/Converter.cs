@@ -46,5 +46,9 @@ namespace consoleRemHall.Support
         {
             return prop * 3600;
         }
+        public static double ToCubicMetersPerHour(this double prop,double density)
+        {
+            return (prop * 3600) / density;
+        }
     }
 }
