@@ -1,11 +1,13 @@
-﻿using consoleRemHall.NaturalPhenomenaDependent;
-using consoleRemHall.SemanticObjects;
-using consoleRemHall.SimpleObjects;
+﻿using consoleRemHall.SemanticObjects;
 
-namespace consoleRemHall.CompoundObjects
+namespace wasmSmokeMan.Shared.RemoveHall
 {
     public class SysPart
     {
+        public SysPart()
+        {
+            
+        }
         public SysPart(Floor floor, Duct duct, NetPart netPart)
         {
             Floor = floor;

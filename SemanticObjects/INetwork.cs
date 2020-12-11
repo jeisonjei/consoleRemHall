@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using consoleRemHall.CompoundObjects;
+﻿using System.Collections.Generic;
 
-namespace consoleRemHall.SemanticObjects
+namespace wasmSmokeMan.Shared.RemoveHall
 {
     public interface INetwork
     {
@@ -11,15 +9,16 @@ namespace consoleRemHall.SemanticObjects
         public int Qu { get; set; }
         public SortedList<int,SysPart> System { get; set; }
         public double DpAdditional { get; set; }
-        public void AddRange((int first,int last) range,double floorHeight,(double width,double heigth) ductDims,double additionalDuctLength,double ksiSum);
-        public void AddRange((int first,int last) range,double floorHeight,double ductDiam,double additionalDuctLength,double ksiSum);
+        public double Sdpsm { get; set; }
+        public void AddRange((int first,int last) range,double floorHeight,(double width,double heigth) ductDims,double additionalDuctLength,double ksiSum,(double width,double height) valveDims);
+        public void AddRange((int first,int last) range,double floorHeight,double ductDiam,double additionalDuctLength,double ksiSum,(double width,double height) valveDims);
         public void AddSingle(int index, double floorHeight, (double width,double height) ductDims,
-            double additionalLDuctLength, double ksiSum);
+            double additionalLDuctLength, double ksiSum,(double width,double height) valveDims);
         public void AddSingle(int index, double floorHeight, double ductDiam,
-            double additionalLDuctLength, double ksiSum);
-        public void RemoveRange();
-        public void RemoveSingle();
+            double additionalLDuctLength, double ksiSum,(double width,double height) valveDims);
+        public void RemoveRange((int first, int last) valueTuple);
+        public void RemoveSingle(int index);
         public void CompLevels();
-        public double CompSystem();
+        public void CompSystem();
     }
 }

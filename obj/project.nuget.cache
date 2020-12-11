@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "aoUJYTYnVwnxSYPpMLJ1NwuwALG3bsoqnE5KBUnaXTnYzhRJwVss9XMT2Mj51B9xEokN7/BYsG1+xRQkU5KwzQ==",
+  "dgSpecHash": "eTm8PUDH2KG34akXmMmSVk+zM+I/llndaG5XRoX3ToMtIFsBb5gC2AMWo8VqL8PIi9GQ2ZPQQveEIzxMRIvVqg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Danil\\OneDrive\\Support\\CodingWorker\\consoleRemHall\\consoleRemHall.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Danil\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Danil\\.nuget\\packages\\sharpfluids\\2.0.30\\sharpfluids.2.0.30.nupkg.sha512",
     "C:\\Users\\Danil\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
     "C:\\Users\\Danil\\.nuget\\packages\\unitsnet\\4.69.0\\unitsnet.4.69.0.nupkg.sha512"

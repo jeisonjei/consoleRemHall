@@ -1,9 +1,11 @@
-﻿using Main.NaturalPhenomenaIndependent;
-
-namespace Main.SimpleObjects
+﻿namespace wasmSmokeMan.Shared.RemoveHall
 {
     public class DoorHall
     {
+        public DoorHall()
+        {
+            
+        }
         private Type doorType;
         private double area;
         private double smokeResistance;

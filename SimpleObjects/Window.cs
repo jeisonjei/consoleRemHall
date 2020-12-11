@@ -1,7 +1,11 @@
-﻿namespace consoleRemHall.SimpleObjects
+﻿namespace wasmSmokeMan.Shared.RemoveHall
 {
     public class Window
     {
+        public Window()
+        {
+            
+        }
         private double area;
 
         public Window(double width, double height)

@@ -1,25 +1,26 @@
-﻿using consoleRemHall.Support;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
 
-namespace consoleRemHall.NaturalPhenomenaDependent
+namespace wasmSmokeMan.Shared.RemoveHall
 {
     public class Fluid
     {
-        //название fluid, но подразумевается воздух или дым
-        public Fluid(double temp)
+        public Fluid()
         {
-            Temp = temp;
+            
+        }
+        //название fluid, но подразумевается воздух или дым
+        public Fluid(double tempCels)
+        {
+            TempCels = tempCels;
         }
         //температура воздуха
-        public double Temp { get; set; }
+        public double TempCels { get; set; }
         //плотность
         public double Density
         {
             get
             {
-                return 353 / Temp.ToKelvin();
+                return 353 / TempCels.ToKelvin();
             }
         }
         //вязкость воздуха динамическая
@@ -27,7 +28,7 @@ namespace consoleRemHall.NaturalPhenomenaDependent
         {
             get
             {
-                return 9.80665 * (1.745 * Math.Pow(10, -6) + 5.03 * Math.Pow(10, -9) * Temp);
+                return 9.80665 * (1.745 * Math.Pow(10, -6) + 5.03 * Math.Pow(10, -9) * TempCels);
             }
         }
         //вязкость воздуха кинематическая

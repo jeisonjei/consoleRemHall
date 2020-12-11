@@ -1,15 +1,15 @@
-﻿using consoleRemHall.SimpleObjects;
-using consoleRemHall.Support;
-using Main.NaturalPhenomenaIndependent;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace consoleRemHall.CompoundObjects
+namespace wasmSmokeMan.Shared.RemoveHall
 {
     public class Room
     {
+        public Room()
+        {
+            
+        }
         public Room(double area, double height, List<Window> windows, List<DoorRoom> doors,double materialHeatCombustion, double materialMass, Climate climate)
         {
             Area = area;
@@ -35,7 +35,7 @@ namespace consoleRemHall.CompoundObjects
 
         public List<Opening> Openings { get; set; }
         //площадь проёмов суммарная
-        public double OpeningArea
+        public double OpeningAreaSum
         {
             get
             {
@@ -78,7 +78,7 @@ namespace consoleRemHall.CompoundObjects
         {
             get
             {
-                return (MaterialMass * MaterialHeatCombustion) / ((Surface - OpeningArea) * WoodHeatCombustion);
+                return (MaterialMass * MaterialHeatCombustion) / ((Surface - OpeningAreaSum) * WoodHeatCombustion);
             }
         }
         //удельное критическое количество пожарной нагрузки - формула 105

@@ -15,3 +15,4 @@ C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemHall\obj\Debug\netcoreapp
 C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemHall\obj\Debug\netcoreapp3.1\consoleRemHall.dll
 C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemHall\obj\Debug\netcoreapp3.1\consoleRemHall.pdb
 C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemHall\obj\Debug\netcoreapp3.1\consoleRemHall.genruntimeconfig.cache
+C:\Users\Danil\OneDrive\Support\CodingWorker\consoleRemHall\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll

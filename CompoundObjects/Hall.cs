@@ -1,11 +1,6 @@
-﻿using consoleRemHall.Support;
-using Main.NaturalPhenomenaIndependent;
-using Main.SimpleObjects;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
 
-namespace consoleRemHall.CompoundObjects
+namespace wasmSmokeMan.Shared.RemoveHall
 {
     public class Hall
     {
@@ -18,6 +13,11 @@ namespace consoleRemHall.CompoundObjects
             Room = room;
             Climate = climate;
             BuildingType = buildingType;
+        }
+
+        public Hall()
+        {
+            
         }
         public double Area { get; set; }
         public double Length { get; set; }

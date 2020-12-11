@@ -1,7 +1,11 @@
-﻿namespace consoleRemHall.SemanticObjects
+﻿namespace wasmSmokeMan.Shared.RemoveHall
 {
     public class Floor
     {
+        public Floor()
+        {
+            
+        }
         public int Index { get; set; }
         public double Height { get; set; }
         public double Level { get; set; }

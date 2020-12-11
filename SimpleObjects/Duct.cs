@@ -1,13 +1,14 @@
-﻿using consoleRemHall.NaturalPhenomenaDependent;
-using consoleRemHall.Support;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
 
-namespace consoleRemHall.SimpleObjects
+namespace wasmSmokeMan.Shared.RemoveHall
 {
+    
     public class Duct
     {
+        public Duct()
+        {
+            
+        }
         private double width;
         private double height;
         private double diameter;
@@ -16,10 +17,12 @@ namespace consoleRemHall.SimpleObjects
         {
             Width = width;
             Height = height;
+            Type = Type.Rectangular;
         }
         public Duct(double diameter)
         {
             Diameter = diameter;
+            Type = Type.Round;
         }
 
         public double Width

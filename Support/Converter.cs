@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace consoleRemHall.Support
+namespace wasmSmokeMan.Shared.RemoveHall
 {
     public static class Converter
     {
@@ -49,6 +47,16 @@ namespace consoleRemHall.Support
         public static double ToCubicMetersPerHour(this double prop,double density)
         {
             return (prop * 3600) / density;
+        }
+
+        public static double ToDouble(this string prop)
+        {
+            return Convert.ToDouble(prop);
+        }
+
+        public static int ToInt(this string prop)
+        {
+            return Convert.ToInt32(prop);
         }
     }
 }

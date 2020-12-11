@@ -1,14 +1,10 @@
-﻿using consoleRemHall.CompoundObjects;
-using consoleRemHall.NaturalPhenomenaDependent;
-using consoleRemHall.SimpleObjects;
-using consoleRemHall.Support;
-using Main.NaturalPhenomenaIndependent;
-using Main.SimpleObjects;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using consoleRemHall.SemanticObjects;
+using wasmSmokeMan.Shared.RemoveHall;
+
 
 namespace consoleRemHall
 {
@@ -60,28 +56,33 @@ namespace consoleRemHall
             // Console.WriteLine($"{"VISC",-15}|{duct.Fluid.Nu}");
             // Console.WriteLine($"{"RE",-15}|{duct.Re.RoundTo0()}");
             // Console.WriteLine($"{"HIDRAULIC D",-15}|{duct.HidraulicDiameter.RoundTo1()}");
-            // Console.WriteLine($"{"LAMBDA",-15}|{duct.Lambda}");
+            // Console.WriteLine($"{"LAMBDA",-15}|{duct.Lambda}"); 
             
             Network network=new Network(1,5,hall,climate);
             network.AddSingle(1,4,(600,400),10,4);
-            network.AddRange((2,5),3.2,(600,400),0,0.5);
-            // network.CompPressure();
-            // foreach (KeyValuePair<int,SysPart> part in network.System)
-            // {
-            //     Console.WriteLine($"{part.Key,-5}{"VELOCITY",-10}|{part.Value.NetPart.Velocity.RoundTo2()}");
-            //     Console.WriteLine($"{part.Key,-5}{"FLOW START",-10}|{part.Value.NetPart.FlowStart.RoundTo4()}");
-            //     Console.WriteLine($"{part.Key,-5}{"Gda",-10}|{part.Value.NetPart.Gda.RoundTo4()}");
-            //     Console.WriteLine($"{part.Key,-5}{"FLOW END",-10}|{part.Value.NetPart.FlowEnd.RoundTo4()}");
-            //     Console.WriteLine($"{part.Key,-5}{"TEMP",-10}|{part.Value.NetPart.Fluid.Temp.RoundTo4()}");
-            //     Console.WriteLine($"{part.Key,-5}{"DENSITY",-10}|{part.Value.NetPart.Fluid.Density.RoundTo4()}");
-            //     Console.WriteLine($"{part.Key,-5}{"P START",-10}|{part.Value.NetPart.PressureStart.RoundTo4()}");
-            //     Console.WriteLine($"{part.Key,-5}{"P END",-10}|{part.Value.NetPart.PressureEnd.RoundTo4()}");
-            //     Console.WriteLine($"{part.Key,-5}{"Tsm START",-10}|{part.Value.NetPart.TsmStart.RoundTo4()}");
-            //     Console.WriteLine($"{part.Key,-5}{"Tsm END",-10}|{part.Value.NetPart.TsmEnd.RoundTo4()}");
-            //     Console.WriteLine("----------");
-            // }
-            // Console.WriteLine($"{"Lv Fan",-10}|{network.System.Last().Value.NetPart.FlowEnd.ToCubicMetersPerHour(network.System.Last().Value.NetPart.Fluid.Density).RoundTo0()}");
-            // Console.WriteLine($"{"Pv Fan",-10}|{network.System.Last().Value.NetPart.PressureEnd.RoundTo1()}");
+            network.AddSingle(1,4,(600,400),10,4);
+            network.AddRange((2,4),3.2,(600,400),0,0.5,(800,600));
+            network.AddSingle(5,4,(800,600),20,4);
+            foreach (KeyValuePair<int,SysPart> part in network.System)
+            {
+                Console.WriteLine($"{part.Key,-5}{"LEVEL",-10}|{part.Value.Floor.Level.RoundTo2()}");
+                // Console.WriteLine($"{part.Key,-5}{"VELOCITY",-10}|{part.Value.NetPart.Velocity.RoundTo2()}");
+                // Console.WriteLine($"{part.Key,-5}{"FLOW START",-10}|{part.Value.NetPart.FlowStart.RoundTo4()}");
+                // Console.WriteLine($"{part.Key,-5}{"Gda",-10}|{part.Value.NetPart.Gda.RoundTo4()}");
+                Console.WriteLine($"{part.Key,-5}{"Gdpa",-10}|{part.Value.NetPart.Gdpa.RoundTo4()}");
+                // Console.WriteLine($"{part.Key,-5}{"FLOW END",-10}|{part.Value.NetPart.FlowEnd.RoundTo4()}");
+                // Console.WriteLine($"{part.Key,-5}{"TEMP",-10}|{part.Value.NetPart.Fluid.Temp.RoundTo4()}");
+                // Console.WriteLine($"{part.Key,-5}{"DENSITY",-10}|{part.Value.NetPart.Fluid.Density.RoundTo4()}");
+                // Console.WriteLine($"{part.Key,-5}{"P START",-10}|{part.Value.NetPart.PressureStart.RoundTo4()}");
+                // Console.WriteLine($"{part.Key,-5}{"P END",-10}|{part.Value.NetPart.PressureEnd.RoundTo4()}");
+                // Console.WriteLine($"{part.Key,-5}{"Tsm START",-10}|{part.Value.NetPart.TsmStart.RoundTo4()}");
+                // Console.WriteLine($"{part.Key,-5}{"Tsm END",-10}|{part.Value.NetPart.TsmEnd.RoundTo4()}");
+                // Console.WriteLine("----------");
+            }
+
+            Console.WriteLine($"-----");
+            Console.WriteLine($"{"Lv Fan",-10}|{network.System.Last().Value.NetPart.FlowEnd.ToCubicMetersPerHour(network.System.Last().Value.NetPart.Fluid.Density).RoundTo0()}");
+            Console.WriteLine($"{"Pv Fan",-10}|{network.System.Last().Value.NetPart.PressureEnd.RoundTo1()}");
 
         }
     }
