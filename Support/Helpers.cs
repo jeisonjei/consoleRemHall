@@ -6,18 +6,25 @@ namespace wasmSmokeMan.Shared.RemoveHall
     {
         public static int Range((int first, int last) range)
         {
-            if (range.first > range.last)
-                // throw new ArgumentException("...");
-                Console.WriteLine($"Первый индекс диапазона ({range.first}) должен быть меньше последнего индекса ({range.last})");
+            if (CheckAddArguments((range.first, range.last)))
+            {
+                if (range.first < 0)
+                    return range.last - range.first;
+                if (range.first > 0)
+                    return range.last + 1 - range.first;
+            }
+            return 0;
+        }
+        public static bool CheckAddArguments((int first, int last) range)
+        {
             if (range.first == 0 || range.last == 0)
-                // throw new ArgumentException("...");
-                Console.WriteLine($"Первый или последний индекс диапазона не могут равняться нулю (0)");
-            if (range.first < 0)
-                return range.last - range.first;
-            if (range.first > 0)
-                return range.last + 1 - range.first;
-            Console.WriteLine($"Неизвестная ошибка");
-            throw new ArgumentException("...");
+            {
+                // throw new ArgumentException($"Первый или последний этаж диапазона не могут иметь индекс {0}. Для подземных этажей используйте индекс '-1', '-2' итд");
+                Console.WriteLine($"Первый или последний этаж диапазона не могут иметь индекс ({0}). Для подземных этажей используйте индекс '-1', '-2' итд");
+                return false;
+            }
+            return true;
+
         }
         public static bool CheckAddArguments(int index, double height, int firstFloorIndex, int lastFloorIndex)
         {

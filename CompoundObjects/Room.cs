@@ -6,10 +6,6 @@ namespace wasmSmokeMan.Shared.RemoveHall
 {
     public class Room
     {
-        public Room()
-        {
-            
-        }
         public Room(double area, double height, List<Window> windows, List<DoorRoom> doors,double materialHeatCombustion, double materialMass, Climate climate)
         {
             Area = area;

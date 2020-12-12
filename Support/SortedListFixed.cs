@@ -1,24 +1,27 @@
 using System;
 using System.Collections.Generic;
-public class SortedListFixed<TKey, TValue> : SortedList<TKey, TValue>
+namespace wasmSmokeMan.Shared.RemoveHall
 {
-    public SortedListFixed(int size)
+    public class SortedListFixed<TKey, TValue> : SortedList<TKey, TValue>
     {
-        Size = size;
-    }
-    public int Size { get; set; }
-    new public void Add(TKey key, TValue value)
-    {
-        try
+        public SortedListFixed(int size)
         {
-            if (this.Count < Size) base.Add(key, value);
-            else Console.WriteLine($"Все этажи уже добавлены");
+            Size = size;
         }
-        catch (Exception ex)
+        public int Size { get; set; }
+        new public void Add(TKey key, TValue value)
         {
-            if (ex.Message.Contains("An item with the same key has already been added"))
-                // throw new ArgumentException($"Этаж с индексом {key} уже добавлен");
-                Console.WriteLine($"Этаж с индексом {key} уже добавлен");
+            try
+            {
+                if (this.Count < Size) base.Add(key, value);
+                else Console.WriteLine($"Все этажи уже добавлены");
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message.Contains("An item with the same key has already been added"))
+                    // throw new ArgumentException($"Этаж с индексом {key} уже добавлен");
+                    Console.WriteLine($"Этаж с индексом {key} уже добавлен");
+            }
         }
     }
 }

@@ -3,10 +3,6 @@ namespace wasmSmokeMan.Shared.RemoveHall
 {
     public class Climate
     {
-        public Climate()
-        {
-            
-        }
         public Climate(double tempOutside, double tempInside, double windVelocity)
         {
             TempOutside = tempOutside;
