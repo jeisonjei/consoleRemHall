@@ -1,5 +1,4 @@
-﻿using consoleRemHall.SemanticObjects;
-
+﻿
 namespace wasmSmokeMan.Shared.RemoveHall
 {
     public class SysPart

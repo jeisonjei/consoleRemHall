@@ -1,6 +1,4 @@
 ﻿using System;
-using consoleRemHall.SemanticObjects;
-using Type = wasmSmokeMan.Shared.RemoveHall.Type;
 
 namespace wasmSmokeMan.Shared.RemoveHall
 {
