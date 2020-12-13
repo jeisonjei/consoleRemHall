@@ -1,11 +1,24 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Newtonsoft.Json;
 namespace wasmSmokeMan.Shared.RemoveHall
 {
     public class Network
     {
+        private int firstFloorIndex;
+        private int lastFloorIndex;
+
         public Network() { }
+        public Network Clone()
+        {
+            Network clone = new Network();
+            var json = JsonConvert.SerializeObject(this);
+            clone = JsonConvert.DeserializeObject<Network>(json);
+            clone.System = new SortedListFixed<int, SysPart>(System);
+
+            return clone;
+        }
         public Network(int firstFloorIndex, int lastFloorIndex, double firstFloorLevel, Climate climate, Hall hall)
         {
             FirstFloorIndex = firstFloorIndex;
@@ -13,12 +26,12 @@ namespace wasmSmokeMan.Shared.RemoveHall
             FirstFloorLevel = firstFloorLevel;
             Climate = climate;
             Hall = hall;
-            System = new SortedListFixed<int, SysPart>(Helpers.Range((firstFloorIndex, lastFloorIndex)));
+            System.Size = Qu;
         }
 
-        public SortedListFixed<int, SysPart> System { get; set; }
-        public int FirstFloorIndex { get; set; }
-        public int LastFloorIndex { get; set; }
+        public SortedListFixed<int, SysPart> System { get; set; } = new SortedListFixed<int, SysPart>();
+        public int FirstFloorIndex { get => firstFloorIndex; set {  firstFloorIndex = value; System.Size = Qu; }  }
+        public int LastFloorIndex { get => lastFloorIndex; set  {  lastFloorIndex = value; System.Size = Qu; } }
         public double FirstFloorLevel { get; set; }
         public int Qu
         {
@@ -38,7 +51,14 @@ namespace wasmSmokeMan.Shared.RemoveHall
         public object HeightAboveZero { get; private set; }
         public double Lv { get; private set; }
         public double Psv { get; private set; }
-
+        public void AddToSystem(int index, SysPart sysPart)
+        {
+            System.Add(index, sysPart);
+            if (System.Count == Qu)
+            {
+                CompLevels();
+            }
+        }
         // с клапаном
         public void AddSingle(
             int index,
@@ -55,7 +75,7 @@ namespace wasmSmokeMan.Shared.RemoveHall
                 Valve valve = new Valve(valveDims.width, valveDims.height, Sdpsm);
                 NetPart netPart = new NetPart(duct, additionalDuctLength, ksiSum, floor, Climate, valve);
                 SysPart sysPart = new SysPart(floor, duct, netPart);
-                System.Add(index, sysPart);
+                AddToSystem(index, sysPart);
             }
             return;
 
@@ -74,7 +94,7 @@ namespace wasmSmokeMan.Shared.RemoveHall
                 Duct duct = new Duct(ductDims.width, ductDims.height);
                 NetPart netPart = new NetPart(duct, additionalLDuctLength, ksiSum, floor, Climate);
                 SysPart sysPart = new SysPart(floor, duct, netPart);
-                System.Add(index, sysPart);
+                AddToSystem(index, sysPart);
 
             }
         }
@@ -103,7 +123,7 @@ namespace wasmSmokeMan.Shared.RemoveHall
                     Valve valve = new Valve(valveDims.width, valveDims.height, Sdpsm);
                     NetPart netPart = new NetPart(duct, additionalDuctLength, ksiSum, floor, Climate, valve);
                     SysPart sysPart = new SysPart(floor, duct, netPart);
-                    System.Add(i, sysPart);
+                    AddToSystem(i, sysPart);
 
                 }
             }
@@ -127,15 +147,16 @@ namespace wasmSmokeMan.Shared.RemoveHall
                     Duct duct = new Duct(ductDims.width, ductDims.height);
                     NetPart netPart = new NetPart(duct, additionalDuctLength, ksiSum, floor, Climate);
                     SysPart sysPart = new SysPart(floor, duct, netPart);
-                    System.Add(i, sysPart);
+                    AddToSystem(i, sysPart);
 
                 }
             }
         }
         public void RemoveRange((int first, int last) range)
         {
-            for (int i = range.first; i == Helpers.Range((range.first, range.last)); i++)
+            for (int i = range.first; i <= range.last; i++)
             {
+                if (i == 0) continue;
                 System.Remove(i);
             }
 
@@ -162,13 +183,13 @@ namespace wasmSmokeMan.Shared.RemoveHall
                         _ += System[i].Floor.Height;
                     }
                 }
-                else // throw new ArgumentException($"Не все этажи добавлены. Диапазон этажей : ({FirstFloorIndex})-({LastFloorIndex}), добавлены этажи с ({System.First().Key})-({System.Last().Key})");
-                    Console.WriteLine($"Не все этажи добавлены. Диапазон этажей : ({FirstFloorIndex})-({LastFloorIndex}), добавлены этажи с ({System.First().Key})-({System.Last().Key})");
+                else throw new ArgumentException($"Не все этажи добавлены. Диапазон этажей : ({FirstFloorIndex})-({LastFloorIndex}), добавлены этажи с ({System.First().Key})-({System.Last().Key})");
+                    //Console.WriteLine($"Не все этажи добавлены. Диапазон этажей : ({FirstFloorIndex})-({LastFloorIndex}), добавлены этажи с ({System.First().Key})-({System.Last().Key})");
             }
             catch (Exception ex)
             {
-                // throw new ArgumentException(ex.Message);
-                Console.WriteLine(ex.Message);
+                throw new ArgumentException(ex.Message);
+                //Console.WriteLine(ex.Message);
             }
         }
         public void CompSystem()
@@ -189,18 +210,18 @@ namespace wasmSmokeMan.Shared.RemoveHall
                 {
                     if (i == 1)
                     {
-                        System[i].NetPart.Fluid.TempCels/*текущий участок*/ = System[i-2].NetPart.TsmEnd.ToCelsius()/*конец предыдущий участок*/;
-                        System[i].NetPart.FlowStart/*начало текущего участка*/ = System[i-2].NetPart.FlowEnd/*конец предыдущего участок*/;
-                        System[i].NetPart.PressureStart/*начало текущего участка*/ = System[i-2].NetPart.PressureEnd/*конец предыдущего участка*/;
-                        System[i].NetPart.TsmStart/*начало текущего участка*/ = System[i-2].NetPart.TsmEnd/*конец предыдущего участка*/;
+                        System[i].NetPart.Fluid.TempCels/*текущий участок*/ = System[i - 2].NetPart.TsmEnd.ToCelsius()/*конец предыдущий участок*/;
+                        System[i].NetPart.FlowStart/*начало текущего участка*/ = System[i - 2].NetPart.FlowEnd/*конец предыдущего участок*/;
+                        System[i].NetPart.PressureStart/*начало текущего участка*/ = System[i - 2].NetPart.PressureEnd/*конец предыдущего участка*/;
+                        System[i].NetPart.TsmStart/*начало текущего участка*/ = System[i - 2].NetPart.TsmEnd/*конец предыдущего участка*/;
 
                     }
                     else
                     {
-                        System[i].NetPart.Fluid.TempCels/*текущий участок*/ = System[i-1].NetPart.TsmEnd.ToCelsius()/*конец предыдущий участок*/;
-                        System[i].NetPart.FlowStart/*начало текущего участка*/ = System[i-1].NetPart.FlowEnd/*конец предыдущего участок*/;
-                        System[i].NetPart.PressureStart/*начало текущего участка*/ = System[i-1].NetPart.PressureEnd/*конец предыдущего участка*/;
-                        System[i].NetPart.TsmStart/*начало текущего участка*/ = System[i-1].NetPart.TsmEnd/*конец предыдущего участка*/;
+                        System[i].NetPart.Fluid.TempCels/*текущий участок*/ = System[i - 1].NetPart.TsmEnd.ToCelsius()/*конец предыдущий участок*/;
+                        System[i].NetPart.FlowStart/*начало текущего участка*/ = System[i - 1].NetPart.FlowEnd/*конец предыдущего участок*/;
+                        System[i].NetPart.PressureStart/*начало текущего участка*/ = System[i - 1].NetPart.PressureEnd/*конец предыдущего участка*/;
+                        System[i].NetPart.TsmStart/*начало текущего участка*/ = System[i - 1].NetPart.TsmEnd/*конец предыдущего участка*/;
 
                     }
                 }
